@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenali Asas Sains Komputer bersama Sir Irfan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Menambah font Google untuk mempercantikkan tulisan */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Menggunakan font Georgia untuk keseluruhan laman sesawang*/
+        body {
+            font-family: , Georgia;
+            line-height: 1.6;
+            background-color: #003366;
+            color: #003366;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(to right, #003366, #ff33cc);
+            padding: 20px 0;
+            color: #00ffff;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            max-width: 120px;
+            margin: 0 auto 10px auto;
+            display: block;
+            border-radius: 70%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigasi */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 1rem;
+            border-radius: 20px;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #78ffd6;
+            color: #333;
+            transform: scale(1.1);
+        }
+
+        /* Main Styling */
+        main {
+            padding: 20px;
+        }
+
+        /* Animasi muncul untuk setiap bahagian */
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            animation: fadeInSection 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInSection {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        section p {
+            margin: 10px 0;
+        }
+
+        /* Latihan, Refleksi dan Tugasan */
+        #latihan, #refleksi, #tugasan {
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            animation: fadeInSection 1.5s ease-out forwards;
+        }
+
+        #latihan:hover, #refleksi:hover, #tugasan:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsif untuk bahagian ini */
+        @media (max-width: 768px) {
+            #latihan, #refleksi, #tugasan {
+                background-size: contain;
+                background-position: top;
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #007991;
+            color: white;
+            animation: fadeInFooter 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .navigation-buttons button {
+            background: linear-gradient(90deg, #1565c0, #42a5f5);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 5px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .navigation-buttons button:hover {
+            background: linear-gradient(90deg, #0d47a1, #1565c0);
+            transform: translateY(-3px);
+        }
+
+        .btn-latihan {
+            background: #42a5f5;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-latihan:hover {
+            background: #1565c0;
+        }
+
+        .submit {
+            background: #42a5f5;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+		
+		
+
+        .submit:hover {
+            background: #1565c0;
+        }
+		/* Animasi hover untuk butang */
+.navigation-buttons button {
+    background: linear-gradient(90deg, #1565c0, #42a5f5);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease-out;
+}
+
+.navigation-buttons button:hover {
+    background: linear-gradient(90deg, #0d47a1, #1565c0);
+    transform: translateY(-3px) scale(1.1); /* Penambahan kesan scaling */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih besar */
+}
+/* Animasi untuk tajuk header */
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+	colour : blue;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Animasi zoom pada gambar */
+section img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+section img:hover {
+    transform: scale(1.1); /* Zoom in apabila kursor melayang di atas gambar */
+}
+/* Animasi muncul footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #007991;
+    color: white;
+    animation: fadeInFooter 1.5s ease-out forwards;
+}
+
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Animasi untuk menu navigasi */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background: #78ffd6;
+    color: #333;
+    transform: scale(1.1); /* Menambah efek pembesaran */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan pada hover */
+}
+/* Transisi halaman */
+html {
+    scroll-behavior: smooth;
+}
+
+.music-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 9999; /* Nilai z-index tinggi untuk memastikan elemen ini di atas elemen lain */
+}
+
+.music-logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+    transform: scale(1); /* Ukuran awal */
+    z-index: 9999; /* Pastikan logo tetap berada di atas */
+}
+
+.music-logo:hover {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Perbesar bayangan */
+    transform: scale(1.2); /* Perbesar sedikit */
+}
+
+.music-logo:active {
+    background: #00f2fe; /* Warna lebih terang saat ditekan */
+    transform: scale(1.1); /* Sedikit lebih kecil dari hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Kurangi bayangan */
+}
+
+.music-logo img {
+    width: 35px; /* Ukuran logo sedikit lebih besar */
+    height: 35px;
+    transition: transform 0.3s;
+}
+
+.music-logo:hover img {
+    transform: scale(1.1); /* Perbesar logo di dalam lingkaran */
+}
+
+ /* Tambahkan kelas untuk menyembunyikan tombol secara default */
+.hidden {
+    display: none;
+}
+
+ 
+    }
+    .btn-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-right: 20px;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transform: translateX(100%); /* Tersembunyi secara lalai */
+      opacity: 0;
+    }
+    .music-container:hover .btn-container {
+      transform: translateX(0); /* Slide keluar */
+      opacity: 1;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      transition: background 0.3s, color 0.3s;
+    }
+    button:hover {
+      background: white;
+      color: #00f2fe;
+    }
+    .play-btn {
+      border-color: #28a745;
+    }
+    .mute-btn {
+      border-color: #dc3545;
+    }
+    .replay-btn {
+      border-color: #ffc107;
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\A241\DTD3033\laragon\www\Kit Media KPD\GambarSaya.jpg" alt="Logo Laman Pembelajaran">
+        <h1>Kenali Asas Sains Komputer bersama Cikgu Irfan</h1>
+        <nav>
+            <div class="navigation-buttons">
+                <button onclick="document.getElementById('pengenalan').scrollIntoView({ behavior: 'smooth' });">Pengenalan</button>
+                <button onclick="document.getElementById('slide').scrollIntoView({ behavior: 'smooth' });">Slide Pengajaran</button>
+                <button onclick="document.getElementById('video').scrollIntoView({ behavior: 'smooth' });">Video Pengajaran</button>
+                <button onclick="document.getElementById('nota').scrollIntoView({ behavior: 'smooth' });">Nota</button>
+                <button onclick="document.getElementById('latihan').scrollIntoView({ behavior: 'smooth' });">Latihan</button>
+                <button onclick="document.getElementById('refleksi').scrollIntoView({ behavior: 'smooth' });">Refleksi</button>
+                <button onclick="document.getElementById('tugasan').scrollIntoView({ behavior: 'smooth' });">Penghantaran Tugasan</button>
+            </div>
+        </nav>
+    </header>
+
+<div class="music-container">
+    <div class="music-logo" onclick="toggleMusicMenu()">
+        <img src="C:\A241\DTD3033\laragon\www\Kit Media KPD\MusicLogo.jpg" alt="Music Icon">
+		
+    </div>
+    <div class="btn-container hidden">
+        <button class="play-btn" onclick="playSound()">Mulakan Lagu</button>
+        <button class="mute-btn" onclick="muteSound()">Matikan Lagu</button>
+        <button class="replay-btn" onclick="replaySound()">Ulang Lagu</button>
+    </div>
+</div> 
+
+
+
+  <audio id="backgroundAudio" loop>
+	<source src="C:\A241\DTD3033\laragon\www\Kit Media KPD\Lagu2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+
+	
+        <section id="pengenalan">
+            <h2>Pengenalan Asas Sains Komputer</h2><br>
+            <img src="C:/A241/DTD3033/laragon/www/Kit Media KPD/GambarPengenalan2.jpg" alt="Gambar Pengenalan">
+            <p>Apa yang akan anda pelajari dalam bab ini?<br><br>
+            Asas Sains Komputer Dalam bab Konsep Asas Pemikiran Komputasional, anda akan belajar teknik Leraian, Pengecaman Corak, Peniskalaan dan Pengitlakan dalam pemikiran komputasional untuk menyelesaikan masalah.
+            Anda akan belajar bagaimana menggunakan teknik leraian untuk menyelesaikan tugasan dan menentukan langkah secara tertib.
+            Selain itu, anda juga akan belajar mengesan unsur persamaan dan perbezaan untuk pengecaman corak dalam sesuatu situasi.
+            Dengan memahami konsep ini, anda akan dapat memikirkan dan menyelesaikan masalah dengan lebih efektif menggunakan teknologi.</p>
+        </section>
+
+        <section id="slide">
+            <h2>Slide Pengajaran</h2><br><br>
+            <a href="https://www.canva.com/design/DAGaIudOYTQ/mzn6lLp3hF1StcOadeJzlQ/edit?utm_content=DAGaIudOYTQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+                <img src="C:/A241/DTD3033/laragon/www/Kit Media KPD/GambarSlidePerbentangan.jpg" alt="Gambar Slide Perbentangan">
+            </a>
+            <iframe width="100%" height="315" src="https://heyzine.com/flip-book/2fd195c92a.html" frameborder="0"></iframe>
+        </section>
+
+        <section id="video">
+            <h2>Video Pengajaran</h2><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/LOrQ9xzDSBs?si=Xrp3MI66DEyuWO7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/_8ywcTNMdrA?si=kni62JemUj1FKmv5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+			<iframe width="100%" height="315" src="https://www.youtube.com/embed/7BSkkO8F6zc?si=Afd8BHQ_B0lSSPWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/uY0eOOaI4mA?si=gc_C30XM8xZhH6Kf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/BaM0C85S3WM?si=qWVFZu3pEdvWEPTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/nG_h3kNxd60?si=Cu52YpAF_5RarG5R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/4GX3cNy320s?si=LuBLdPgThUIVCTN6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/dr7Hfx6wAg4?si=qR19OQ9oqOZn_hJp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/EVH85tRsP04?si=F28TXTvpkNkSAlQF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/EVH85tRsP04?si=F28TXTvpkNkSAlQF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+        </section>
+
+        <section id="nota">
+            <h2>Nota Tambahan</h2><br><br>
+            <iframe src="https://heyzine.com/flip-book/9a809c74a7.html" frameborder="0" style="width: 100%; height: 500px;"></iframe>
+			<iframe src="https://heyzine.com/flip-book/73994946b0.html" frameborder="0" style="width: 100%; height: 500px;"></iframe>
+        </section>
+
+       <section id="latihan">
+    <h2 style="color: blue;">Latihan</h2><br>
+    <img src="C:/A241/DTD3033/laragon/www/Kit Media KPD/BackgroundStudy.jpg" alt="Gambar Pengenalan">
+    <p>Mari Kita Sama-Sama Teka!</p>
+    <a href="https://www.hangmanwords.com/play/custom?g=YXNhcyUyMHBlbWlraXJhbiUyMGtvbXB1dGFzaW9uYWw=" target="_blank" class="btn-latihan">Mulakan Tekaan</a>
+    <p>Mari Kita Sama-Sama Uji Minda!</p>
+    <a href="https://dashboard.blooket.com/set/67591acdb230d6effc6e3c9d" target="_blank" class="btn-latihan">Mulakan Latihan</a><br><br>
+</section>
+
+<section id="refleksi">
+    <h2 style="color: blue;">Refleksi</h2><br>
+    <img src="C:/A241/DTD3033/laragon/www/Kit Media KPD/BackgroundRefleksi.jpg" alt="Gambar Pengenalan"><br>
+    <a href="https://padlet.com/d20221102528/refleksi-sesi-pengajaran-er49cirnr7lv6ujd" target="_blank" class="submit">Sesi Refleksi</a>
+</section>
+
+<section id="tugasan">
+    <h2 style="color: blue;">Penghantaran Tugasan</h2><br>
+    <img src="C:/A241/DTD3033/laragon/www/Kit Media KPD/BackgroundPenghantaranTugasan.jpg" alt="Gambar Pengenalan">
+    <p>Muat naik tugasan anda di sini:</p>
+    <a href="https://padlet.com/d20221102528/penghantaran-tugasan-ask-t1-4emauorirpmprup7" target="_blank" class="submit">Penghantaran Tugasan</a><br>
+</section>
+
+    </main>
+
+    <footer>
+		<a href="https://padlet.com/d20221102528/penghantaran-tugasan-ask-t1-4emauorirpmprup7" target="_blank" class="submit">Muat Turun Manual Pengguna</a></p><br>
+		 <p>&copy; Selamat Datang ke Laman Sesawang Kenali Asas Sains Komputer bersama Cikgu Irfan<br><br>
+    </footer>
+</body>
+<script>
+
+const audio = document.getElementById('backgroundAudio');
+
+function playSound() {
+    audio.play();
+}
+
+function muteSound() {
+    audio.pause();
+}
+
+function replaySound() {
+    audio.currentTime = 0;
+    audio.play();
+}
+
+function toggleMusicMenu() {
+    const btnContainer = document.querySelector('.btn-container');
+    btnContainer.classList.toggle('hidden');
+}
+
+
+</script>
+</html>
+
+
